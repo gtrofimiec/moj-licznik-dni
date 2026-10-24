@@ -6,14 +6,67 @@
 	objectVersion = 90;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		817A77CE308D068C0078F8CC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817A77CD308D068C0078F8CC /* WidgetKit.framework */; };
+		817A77D0308D068C0078F8CC /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817A77CF308D068C0078F8CC /* SwiftUI.framework */; };
+		817A77DB308D068F0078F8CC /* LicznikDniWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 817A77CB308D068C0078F8CC /* LicznikDniWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		817A77E4308D16470078F8CC /* DayCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817A77E3308D16410078F8CC /* DayCounter.swift */; };
+		817A77E5308D16AE0078F8CC /* DayCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817A77E3308D16410078F8CC /* DayCounter.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		817A77D9308D068F0078F8CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000000000000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 817A77CA308D068C0078F8CC;
+			remoteInfo = LicznikDniWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		817A77DC308D068F0078F8CC /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			dstPath = "";
+			dstSubfolder = PlugIns;
+			files = (
+				817A77DB308D068F0078F8CC /* LicznikDniWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		000000000000000000000120 /* Mój licznik dni.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mój licznik dni.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		817A77CB308D068C0078F8CC /* LicznikDniWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LicznikDniWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		817A77CD308D068C0078F8CC /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		817A77CF308D068C0078F8CC /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		817A77E2308D08910078F8CC /* LicznikDniWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LicznikDniWidgetExtension.entitlements; sourceTree = "<group>"; };
+		817A77E3308D16410078F8CC /* DayCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCounter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		817A77DF308D068F0078F8CC /* Exceptions for "LicznikDniWidget" folder in "LicznikDniWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 817A77CA308D068C0078F8CC /* LicznikDniWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		000000000000000000000010 /* Mój licznik dni */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "Mój licznik dni";
+			sourceTree = "<group>";
+		};
+		817A77D1308D068C0078F8CC /* LicznikDniWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				817A77DF308D068F0078F8CC /* Exceptions for "LicznikDniWidget" folder in "LicznikDniWidgetExtension" target */,
+			);
+			path = LicznikDniWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -24,13 +77,24 @@
 			files = (
 			);
 		};
+		817A77C8308D068C0078F8CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+				817A77D0308D068C0078F8CC /* SwiftUI.framework in Frameworks */,
+				817A77CE308D068C0078F8CC /* WidgetKit.framework in Frameworks */,
+			);
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		000000000000000000000001 = {
 			isa = PBXGroup;
 			children = (
+				817A77E2308D08910078F8CC /* LicznikDniWidgetExtension.entitlements */,
 				000000000000000000000010 /* Mój licznik dni */,
+				817A77D1308D068C0078F8CC /* LicznikDniWidget */,
+				817A77CC308D068C0078F8CC /* Frameworks */,
+				817A77E3308D16410078F8CC /* DayCounter.swift */,
 				000000000000000000000020 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -39,8 +103,18 @@
 			isa = PBXGroup;
 			children = (
 				000000000000000000000120 /* Mój licznik dni.app */,
+				817A77CB308D068C0078F8CC /* LicznikDniWidgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		817A77CC308D068C0078F8CC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				817A77CD308D068C0078F8CC /* WidgetKit.framework */,
+				817A77CF308D068C0078F8CC /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -53,8 +127,12 @@
 				000000000000000120000000 /* Sources */,
 				000000000000000130000000 /* Frameworks */,
 				000000000000000140000000 /* Resources */,
+				817A77DC308D068F0078F8CC /* Embed Foundation Extensions */,
 			);
 			buildRules = (
+			);
+			dependencies = (
+				817A77DA308D068F0078F8CC /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				000000000000000000000010 /* Mój licznik dni */,
@@ -64,6 +142,24 @@
 			productReference = 000000000000000000000120 /* Mój licznik dni.app */;
 			productType = "com.apple.product-type.application";
 		};
+		817A77CA308D068C0078F8CC /* LicznikDniWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 817A77E0308D068F0078F8CC /* Build configuration list for PBXNativeTarget "LicznikDniWidgetExtension" */;
+			buildPhases = (
+				817A77C7308D068C0078F8CC /* Sources */,
+				817A77C8308D068C0078F8CC /* Frameworks */,
+				817A77C9308D068C0078F8CC /* Resources */,
+			);
+			buildRules = (
+			);
+			fileSystemSynchronizedGroups = (
+				817A77D1308D068C0078F8CC /* LicznikDniWidget */,
+			);
+			name = LicznikDniWidgetExtension;
+			productName = LicznikDniWidgetExtension;
+			productReference = 817A77CB308D068C0078F8CC /* LicznikDniWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -71,11 +167,14 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 2630;
-				LastUpgradeCheck = 2700;
+				LastSwiftUpdateCheck = 2710;
+				LastUpgradeCheck = 2710;
 				TargetAttributes = {
 					000000000000000100000000 = {
 						CreatedOnToolsVersion = 26.3;
+					};
+					817A77CA308D068C0078F8CC = {
+						CreatedOnToolsVersion = 27.1;
 					};
 				};
 			};
@@ -94,6 +193,7 @@
 			projectRoot = "";
 			targets = (
 				000000000000000100000000 /* Mój licznik dni */,
+				817A77CA308D068C0078F8CC /* LicznikDniWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -104,15 +204,35 @@
 			files = (
 			);
 		};
+		817A77C9308D068C0078F8CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		000000000000000120000000 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			files = (
+				817A77E5308D16AE0078F8CC /* DayCounter.swift in Sources */,
+			);
+		};
+		817A77C7308D068C0078F8CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+				817A77E4308D16470078F8CC /* DayCounter.swift in Sources */,
 			);
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		817A77DA308D068F0078F8CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 817A77CA308D068C0078F8CC /* LicznikDniWidgetExtension */;
+			targetProxy = 817A77D9308D068F0078F8CC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		000000000000000011000000 /* Debug configuration for PBXProject "Mój licznik dni" */ = {
@@ -151,6 +271,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = Q76F7APH9R;
 				DRIVERKIT_DEPLOYMENT_TARGET = 27.0;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -221,6 +342,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = Q76F7APH9R;
 				DRIVERKIT_DEPLOYMENT_TARGET = 27.0;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -250,9 +372,9 @@
 		000000000000000111000000 /* Debug configuration for PBXNativeTarget "Mój licznik dni" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Mój licznik dni/Mój licznik dni.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Q76F7APH9R;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
@@ -288,9 +410,9 @@
 		000000000000000112000000 /* Release configuration for PBXNativeTarget "Mój licznik dni" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Mój licznik dni/Mój licznik dni.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Q76F7APH9R;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
@@ -323,6 +445,71 @@
 			};
 			name = Release;
 		};
+		817A77DD308D068F0078F8CC /* Debug configuration for PBXNativeTarget "LicznikDniWidgetExtension" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = LicznikDniWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LicznikDniWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LicznikDniWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = pl.grzegorztrofimiec.licznikdni.LicznikDniWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		817A77DE308D068F0078F8CC /* Release configuration for PBXNativeTarget "LicznikDniWidgetExtension" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = LicznikDniWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LicznikDniWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LicznikDniWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = pl.grzegorztrofimiec.licznikdni.LicznikDniWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -339,6 +526,14 @@
 			buildConfigurations = (
 				000000000000000111000000 /* Debug configuration for PBXNativeTarget "Mój licznik dni" */,
 				000000000000000112000000 /* Release configuration for PBXNativeTarget "Mój licznik dni" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		817A77E0308D068F0078F8CC /* Build configuration list for PBXNativeTarget "LicznikDniWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				817A77DD308D068F0078F8CC /* Debug configuration for PBXNativeTarget "LicznikDniWidgetExtension" */,
+				817A77DE308D068F0078F8CC /* Release configuration for PBXNativeTarget "LicznikDniWidgetExtension" */,
 			);
 			defaultConfigurationName = Release;
 		};

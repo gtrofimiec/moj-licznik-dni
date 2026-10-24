@@ -3,9 +3,9 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selectedDate = Date()
-    @AppStorage("savedStartDate")
+    @AppStorage("savedStartDate", store: UserDefaults(suiteName: "group.pl.grzegorztrofimiec.licznikdni"))
     private var savedStartDate: Double = 0
-
+    
     var body: some View {
         VStack(spacing: 15) {
             Text("Mój licznik dni")
@@ -33,12 +33,18 @@ struct ContentView: View {
             }
             .buttonStyle(.bordered)
 
-            Text("\(daysCount)")
-                .font(.system(size: 80, weight: .bold))
+            if daysCount <= 30 {
+                Text(String(daysCount))
+                    .font(.system(size: 80, weight: .bold))
 
-            Text("DNI")
-                .font(.title2)
-
+                Text("DNI")
+                    .font(.title2)
+            } else {
+                Text(durationText)
+                    .font(.system(size: 30, weight: .bold))
+                    .multilineTextAlignment(.center)
+            }
+            
             if savedStartDate > 0 {
                 let savedDate = Date(
                     timeIntervalSince1970: savedStartDate
@@ -81,6 +87,42 @@ struct ContentView: View {
             from: Calendar.current.startOfDay(for: startDate),
             to: Calendar.current.startOfDay(for: Date())
         ).day ?? 0
+    }
+    
+    private var durationText: String {
+        guard savedStartDate > 0 else {
+            return "0 dni"
+        }
+
+        let startDate = Date(
+            timeIntervalSince1970: savedStartDate
+        )
+
+        return DayCounter.durationText(from: startDate)
+    }
+    
+    private func polishForm(
+        _ number: Int,
+        one: String,
+        few: String,
+        many: String
+    ) -> String {
+        if number == 1 {
+            return one
+        }
+
+        let lastTwo = number % 100
+
+        if (12...14).contains(lastTwo) {
+            return many
+        }
+
+        switch number % 10 {
+        case 2...4:
+            return few
+        default:
+            return many
+        }
     }
 }
 

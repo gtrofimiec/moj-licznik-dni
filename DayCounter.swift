@@ -8,26 +8,20 @@
 import Foundation
 
 struct DayCounter {
+
     static func durationText(from startDate: Date, to endDate: Date = Date()) -> String {
         let calendar = Calendar.current
         let start = calendar.startOfDay(for: startDate)
-        let today = calendar.startOfDay(for: endDate)
+        let end = calendar.startOfDay(for: endDate)
 
-        let totalDays = calendar.dateComponents(
-            [.day],
-            from: start,
-            to: today
-        ).day ?? 0
-
-        if totalDays <= 30 {
-            return String(totalDays) + " " +
-                polishForm(totalDays, one: "dzień", few: "dni", many: "dni")
+        if start > end {
+            return "0 dni"
         }
 
         let parts = calendar.dateComponents(
             [.year, .month, .day],
             from: start,
-            to: today
+            to: end
         )
 
         let years = parts.year ?? 0
@@ -43,12 +37,7 @@ struct DayCounter {
 
         if months > 0 {
             result += " " + String(months) + " " +
-                polishForm(
-                    months,
-                    one: "miesiąc",
-                    few: "miesiące",
-                    many: "miesięcy"
-                )
+                polishForm(months, one: "miesiąc", few: "miesiące", many: "miesięcy")
         }
 
         if days > 0 {
@@ -57,6 +46,48 @@ struct DayCounter {
         }
 
         return result.isEmpty ? "0 dni" : result
+    }
+
+    static func daysText(from startDate: Date, to endDate: Date = Date()) -> String {
+        let calendar = Calendar.current
+        let start = calendar.startOfDay(for: startDate)
+        let today = calendar.startOfDay(for: endDate)
+
+        let totalDays = calendar.dateComponents(
+            [.day],
+            from: start,
+            to: today
+        ).day ?? 0
+
+        return String(totalDays) + " " +
+            polishForm(totalDays, one: "dzień", few: "dni", many: "dni")
+    }
+    
+    static func daysUntil(_ targetDate: Date, from currentDate: Date = Date()) -> Int {
+        let calendar = Calendar.current
+        let today = calendar.startOfDay(for: currentDate)
+        let target = calendar.startOfDay(for: targetDate)
+
+        let remainingDays = calendar.dateComponents(
+            [.day],
+            from: today,
+            to: target
+        ).day ?? 0
+
+        return max(0, remainingDays)
+    }
+    
+    
+    static func daysUntilText(_ targetDate: Date, from currentDate: Date = Date()) -> String {
+        let remainingDays = daysUntil(targetDate, from: currentDate)
+
+        return String(remainingDays) + " " +
+            polishForm(
+                remainingDays,
+                one: "dzień",
+                few: "dni",
+                many: "dni"
+            )
     }
 
     private static func polishForm(

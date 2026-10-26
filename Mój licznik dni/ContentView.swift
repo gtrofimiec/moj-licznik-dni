@@ -128,7 +128,7 @@ struct ContentView: View {
 
             Spacer(minLength: 1)
             
-            Text("© 2023 GeoT")
+            Text("© 2026 GeoT")
                 .font(.footnote)
                 .foregroundStyle(.secondary)
         }

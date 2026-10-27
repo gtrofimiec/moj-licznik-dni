@@ -47,7 +47,7 @@ struct Provider: TimelineProvider {
         let startTimestamp = defaults?.double(forKey: "savedStartDate") ?? 0
         let targetTimestamp = defaults?.double(forKey: "savedTargetDate") ?? 0
 
-        let startDate = startTimestamp > 0
+        let startDate = startTimestamp != 0
             ? Date(timeIntervalSince1970: startTimestamp)
             : nil
 

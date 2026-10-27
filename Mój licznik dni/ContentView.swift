@@ -34,11 +34,14 @@ struct ContentView: View {
             DatePicker(
                 countMode == "from" ? "Data początkowa" : "Data docelowa",
                 selection: $selectedDate,
+                in: Date.distantPast...(countMode == "from"
+                    ? Calendar.current.startOfDay(for: Date())
+                    : Date.distantFuture),
                 displayedComponents: .date
             )
             .datePickerStyle(.compact)
             .environment(\.locale, Locale(identifier: "pl_PL"))
-            
+
             HStack(spacing: 20) {
                 Button("START") {
                     if countMode == "from" {
@@ -84,7 +87,7 @@ struct ContentView: View {
                     .multilineTextAlignment(.center)
             }
 
-            if countMode == "from" && savedStartDate > 0 {
+            if countMode == "from" && savedStartDate != 0 {
                 let savedDate = Date(
                     timeIntervalSince1970: savedStartDate
                 )
@@ -104,7 +107,7 @@ struct ContentView: View {
                 .foregroundStyle(.secondary)
                 .lineLimit(1)
                 .minimumScaleFactor(0.8)
-            } else if countMode == "to" && savedTargetDate > 0 {
+            } else if countMode == "to" && savedTargetDate != 0 {
                 let savedDate = Date(
                     timeIntervalSince1970: savedTargetDate
                 )
@@ -154,7 +157,7 @@ struct ContentView: View {
         }
         .onChange(of: countMode) { _, newMode in
             if newMode == "from" {
-                selectedDate = savedStartDate > 0
+                selectedDate = savedStartDate != 0
                     ? Date(timeIntervalSince1970: savedStartDate)
                     : Date()
             } else {
@@ -188,7 +191,7 @@ struct ContentView: View {
     
     private var daysCount: Int {
         if countMode == "from" {
-            guard savedStartDate > 0 else {
+            guard savedStartDate != 0 else {
                 return 0
             }
 
@@ -221,7 +224,7 @@ struct ContentView: View {
 
     private var durationText: String {
         if countMode == "from" {
-            guard savedStartDate > 0 else {
+            guard savedStartDate != 0 else {
                 return "0 dni"
             }
 

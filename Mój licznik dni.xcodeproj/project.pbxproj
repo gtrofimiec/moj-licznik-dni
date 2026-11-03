@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		81574D02309A2F0E00BEBF9B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 81574D01309A2F0100BEBF9B /* README.md */; };
+		81574D03309A2F0E00BEBF9B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 81574D01309A2F0100BEBF9B /* README.md */; };
 		817A77CE308D068C0078F8CC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817A77CD308D068C0078F8CC /* WidgetKit.framework */; };
 		817A77D0308D068C0078F8CC /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817A77CF308D068C0078F8CC /* SwiftUI.framework */; };
 		817A77DB308D068F0078F8CC /* LicznikDniWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 817A77CB308D068C0078F8CC /* LicznikDniWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -38,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		000000000000000000000120 /* Mój licznik dni.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mój licznik dni.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81574D01309A2F0100BEBF9B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		817A77CB308D068C0078F8CC /* LicznikDniWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LicznikDniWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		817A77CD308D068C0078F8CC /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		817A77CF308D068C0078F8CC /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -90,6 +93,7 @@
 		000000000000000000000001 = {
 			isa = PBXGroup;
 			children = (
+				81574D01309A2F0100BEBF9B /* README.md */,
 				817A77E2308D08910078F8CC /* LicznikDniWidgetExtension.entitlements */,
 				000000000000000000000010 /* Mój licznik dni */,
 				817A77D1308D068C0078F8CC /* LicznikDniWidget */,
@@ -202,11 +206,13 @@
 		000000000000000140000000 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
+				81574D03309A2F0E00BEBF9B /* README.md in Resources */,
 			);
 		};
 		817A77C9308D068C0078F8CC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
+				81574D02309A2F0E00BEBF9B /* README.md in Resources */,
 			);
 		};
 /* End PBXResourcesBuildPhase section */

@@ -134,10 +134,22 @@ struct ContentView: View {
             Text("© 2026 GeoT")
                 .font(.footnote)
                 .foregroundStyle(.secondary)
+            Text("Version \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0") (\(Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "1"))")
+                .font(.caption2)
+                .foregroundStyle(.tertiary)
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .onAppear {
+            if countMode == "from" {
+                selectedDate = savedStartDate != 0
+                    ? Date(timeIntervalSince1970: savedStartDate)
+                    : Date()
+            } else {
+                selectedDate = savedTargetDate > 0
+                    ? Date(timeIntervalSince1970: savedTargetDate)
+                    : Date()
+            }
             if isOnlyDaysForced {
                 if countMode == "from" {
                     showOnlyDaysFrom = true
@@ -178,7 +190,11 @@ struct ContentView: View {
     
     private var showOnlyDays: Bool {
         get {
-            countMode == "from" ? showOnlyDaysFrom : showOnlyDaysTo
+            if isOnlyDaysForced {
+                return true
+            }
+
+            return countMode == "from" ? showOnlyDaysFrom : showOnlyDaysTo
         }
         set {
             if countMode == "from" {
